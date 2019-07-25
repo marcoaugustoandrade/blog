@@ -1,14 +1,37 @@
 function changeTheme(){
-    let style = document.querySelector('#style');
-    if (style.href.search('dark.css')){
-        style.href = '/assets/css/light.css';
-    } else {
-        style.href = '/assets/css/dark.css';
+    
+    verifyTheme();
+    let cookies = document.cookie.split(';');
+    
+    for (i = 0; i < cookies.length; i++){
+        
+        if (cookies[i] == "style=ligth"){
+            style.href = '/assets/css/dark.css';
+            document.cookie = "style=dark";
+            console.log("Mudando para Dark");
+        } 
+        if (cookies[i] == "style=dark") {
+            style.href = '/assets/css/light.css';
+            document.cookie = "style=light";
+            console.log("Mudando para Light");
+        }
+    }    
+}
+
+function verifyTheme(){
+    
+    let cookies = document.cookie.split(';');
+    let count = 0;
+    for (i = 0; i < cookies.length; i++){
+        if (cookies[i] == "style=ligth" || cookies[i] == "style=dark"){
+            count++;
+        } 
     }
+    if (count == 0) document.cookie = "style=dark";
 }
 
 function setCookie(){
-    document.cookie =  "cookies=true";
+    document.cookie = "cookies=true";
     verifyCookie();
 }
 
