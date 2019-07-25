@@ -5,29 +5,41 @@ function changeTheme(){
     
     for (i = 0; i < cookies.length; i++){
         
-        if (cookies[i] == "style=ligth"){
-            style.href = '/assets/css/dark.css';
-            document.cookie = "style=dark";
-            console.log("Mudando para Dark");
-        } 
         if (cookies[i] == "style=dark") {
             style.href = '/assets/css/light.css';
             document.cookie = "style=light";
             console.log("Mudando para Light");
         }
-    }    
+        if (cookies[i] == " style=dark") {
+            style.href = '/assets/css/light.css';
+            document.cookie = "style=light";
+            console.log("Mudando para Light");
+        }
+        if (cookies[i] == "style=ligth"){
+            style.href = '/assets/css/dark.css';
+            document.cookie = "style=dark";
+            console.log("Mudando para Dark");
+        }
+        if (cookies[i] == " style=ligth"){
+            style.href = '/assets/css/dark.css';
+            document.cookie = "style=dark";
+            console.log("Mudando para Dark");
+        }
+    }
 }
 
+// OK
 function verifyTheme(){
     
     let cookies = document.cookie.split(';');
     let count = 0;
     for (i = 0; i < cookies.length; i++){
-        if (cookies[i] == "style=ligth" || cookies[i] == "style=dark"){
+        if (cookies[i] == "style=ligth" || cookies[i] == " style=light" || cookies[i] == "style=dark" || cookies[i] == " style=dark"){
             count++;
         } 
     }
     if (count == 0) document.cookie = "style=dark";
+    console.log(count);
 }
 
 function setCookie(){
