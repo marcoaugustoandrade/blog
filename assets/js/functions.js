@@ -9,6 +9,7 @@ function changeTheme(){
 
 function setCookie(){
     document.cookie =  "cookies=true";
+    verifyCookie();
 }
 
 function verifyCookie(){
