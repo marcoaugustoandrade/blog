@@ -12,6 +12,10 @@ function setCookie(){
 }
 
 function verifyCookie(){
-    let ck = document.cookie.split(';');
-    ck.find();
+    let cookies = document.cookie.split(';');
+    for (i = 0; i < cookies.length; i++){
+        if (cookies[i] == "cookies=true"){
+            document.querySelector(".cookies").style.display = "none";
+        }
+    }
 }  
