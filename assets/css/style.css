@@ -21,7 +21,7 @@
 /* Links */
 a{
     color: #EB3A3A;
-    text-decoration: underline dashed;
+    /* text-decoration: underline dashed; */
 }
 a:hover{
     color: rgba(235, 58, 58, 0.842);
@@ -83,6 +83,7 @@ a:hover{
     padding: 1em;
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 4em;
 }
 /* @media screen and (min-width: 800px){
     .content{
